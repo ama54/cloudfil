@@ -2,9 +2,10 @@ import multifil
 import multifil.aws
 metas = multifil.aws.metas
 
-freq = 0.125
-ts_l = 1 / 3
-rl = 15000
+ts_p_ms = int(input("timesteps per millisecond: "))
+rl = int(input("run length: "))
+freq = float(input("frequency: "))
+ts_l = 1 / ts_p_ms
 
 time_trace = metas.time(timestep_length=ts_l, run_length_in_ms=rl)
 
@@ -24,4 +25,3 @@ wl_meta, run_name = multifil.aws.metas.emit(path_local, # local dir to save run 
                                  )
 run = multifil.aws.run.manage(run_name, False)
 run.run_and_save()
-#input(": ")
