@@ -19,7 +19,7 @@ wl_meta, run_name = multifil.aws.metas.emit(path_local, # local dir to save run 
                                  None, # intial ls, using default by passing none
                                  length_trace, 
                                  1.0, 
-                                 "an example run", # comment describing run
+                                 str(freq), # comment describing run
                                  True, # whether to write out resulting file 
                                   #or just pass back to variable
                                  )
